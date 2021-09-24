@@ -1,0 +1,25 @@
+scale: 0.17749903854687454
+
+
+OG: 2 Mesh Bounding Box Size 1.396777  0.910861  3.000004
+LOG: 2 Mesh Bounding Box Diag 3.432299 
+LOG: 2 Mesh Bounding Box min -0.609897  -0.363605  -2.957047
+LOG: 2 Mesh Bounding Box max 0.786880  0.547256  0.042957
+LOG: 2 Mesh Surface Area is 16.918400
+LOG: 2 Mesh Total Len of 1233 Edges is 325.028534 Avg Len 0.263608
+LOG: 2 Mesh Total Len of 1233 Edges is 325.028534 Avg Len 0.263608 (including faux edges))
+LOG: 2 Thin shell (faces) barycenter:   0.057997   0.136461  -1.493017
+LOG: 2 Vertices barycenter   0.066869   0.124367  -1.218127
+LOG: 2 Mesh Volume  is 1.918930
+LOG: 2 Center of Mass  is 0.059102 0.131882 -1.663169
+LOG: 2 Inertia Tensor is :
+LOG: 2     |  1.298034   0.012782   0.006905 |
+LOG: 2     |  0.012782   1.418582   0.008100 |
+LOG: 2     |  0.006905   0.008100   0.251987 |
+LOG: 2 Principal axes are :
+LOG: 2     |  0.006516   0.006871  -0.999955 |
+LOG: 2     | -0.994487   0.104700  -0.005761 |
+LOG: 2     | -0.104656  -0.994480  -0.007515 |
+LOG: 2 axis momenta are :
+LOG: 2     |  0.251887   1.296729   1.419989 |
+
