@@ -32,8 +32,8 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
 * [**gym**](https://gym.openai.com/docs/) to create environment for object transport
 * [**trimesh**](https://github.com/mikedh/trimesh) to generate 3D object models
-* [**pybullet**](https://pypi.org/project/pybullet/) simulator to resolve mechanics of interaction btw. object and the support surface 
-* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) to training the learning algorithm
+* [**pybullet**](https://pypi.org/project/pybullet/) simulator to resolve mechanics of interaction between the object and the support surface 
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) to train the learning algorithm
 * [**tensorboard**](https://pypi.org/project/tensorboard/) (version 2.0.0) to monitor training progress
 
 ### 2.2 Real Implementation:
@@ -42,7 +42,40 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 
-## 3. Quick Start: Demo of Learned Policy in Simulation
+## 3. Quick Start: Learned Policy in Simulation
+Clone the repository in your conda environment installed with the above dependencies.
+```
+git clone https://github.com/HKUST-RML/learn_rockwalk.git
+```
+
+**Cone Transport**
+```
+cd learn_rockwalk/cone_simulation/
+python main_sim.py
+```
+
+**Moai Transport**
+```
+cd learn_rockwalk/moai_simulation/
+python main_sim.py
+```
+Type 'yes' when prompted to test the model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- ### 2.1 Hardware
