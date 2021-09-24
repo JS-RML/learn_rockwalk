@@ -1,2 +1,2 @@
-# learning_rockwalk
+# learn_rockwalk
 Dynamic, Non-Prehensile, and Underactuated Object Locomotion through Reinforcement Learning
