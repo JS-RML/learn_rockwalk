@@ -42,6 +42,9 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 
+## 3. Quick Start: Demo of Learned Policy in Simulation
+
+
 <!-- ### 2.1 Hardware
 * [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) equipped with [**Arduino 9 Axis Motion Shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 * [**Universal Robot UR10 Robot Arm**](https://www.universal-robots.com/products/ur10-robot/)
@@ -53,6 +56,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx) for UR10 robot arm control
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from Arduino 9 Axis Motion Shield
 * [**teleop_twist_keyboard**](https://github.com/ros-teleop/teleop_twist_keyboard) to perform teleoperated rock-and-walk on a treadmill
+
 
 ## 3. Usage
 
