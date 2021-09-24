@@ -4,16 +4,14 @@ import numpy as np
 import rock_walk
 import time
 import pybullet as bullet
-import matplotlib.pyplot as plt
 
-from stable_baselines3 import TD3, SAC, PPO
+from stable_baselines3 import SAC
 from stable_baselines3.common.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback, CallbackList
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize, VecVideoRecorder
 from custom_callback import GenerateObjectCallback
 
-from scipy.spatial.transform import Rotation as R
 
 class RLModel:
 
@@ -71,7 +69,6 @@ class RLModel:
             f.write("time[1],cone_state[10],contact_coordinates[3],position_control_point[3],velocity_control_point[3]\n")
 
         for count in range(15000):
-            # print(np.degrees(obs[1]))
             action, _states = self._trained_model.predict(obs, deterministic=True)
             obs, rewards, dones, info = self._env.step(action)
 
@@ -117,11 +114,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# action = np.array([0.,0.])
-# for i in range(100000):
-#     bullet.stepSimulation()
-#     self._env.cone.apply_action(action)
-#     time.sleep(1./240.)
-#
-# exit()

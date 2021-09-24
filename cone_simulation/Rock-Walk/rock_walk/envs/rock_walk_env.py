@@ -4,14 +4,9 @@ import time
 import numpy as np
 import pybullet as bullet
 
-import matplotlib.pyplot as plt
-
 from rock_walk.resources.plane import Plane
 from rock_walk.resources.trainingObject import TrainObject
 from rock_walk.resources.goal import GoalMarker
-
-from scipy.spatial.transform import Rotation as R
-
 
 EPISODE_TIMEOUT = 5 #seconds
 DESIRED_NUTATION = np.radians(25)
@@ -38,7 +33,8 @@ class RockWalkEnv(gym.Env):
 
         self.goal = GoalMarker(self.clientID) # for visualizing the direction of transport.
         self.plane = Plane(self.clientID) # support surface representing ground
-        self.cone = TrainObject(self.clientID)
+        self.cone = TrainObject(self.clientID) # object to be transported: here, an oblique circular cone
+
         self.cone.generate_object_mesh(ellipse_params=[self._init_object_param[0], self._init_object_param[0]],
                                        apex_coordinates=[0, self._init_object_param[1], self._init_object_param[2]], density=10)
 
@@ -52,7 +48,7 @@ class RockWalkEnv(gym.Env):
         obs_high = np.array([5, 5, 5, 10, 10, 10], dtype=np.float64)
         self.observation_space = gym.spaces.box.Box(low=obs_low, high=obs_high)
 
-        self.np_random, _ = gym.utils.seeding.np_random() #input seed eg. 0 for repeatability
+        self.np_random, _ = gym.utils.seeding.np_random()
         self.reset()
 
     def step(self, action):
@@ -65,13 +61,10 @@ class RockWalkEnv(gym.Env):
         if self._isTrain==True:
             data = np.loadtxt(self._object_param_file_path, delimiter=',', skiprows=1, dtype=np.float64)
             object_param = list(data[-1,:])
-            action_scale = 0.25 #self._random_action_scale
+            action_scale = 0.25
         else:
             object_param = self._init_object_param
             action_scale = 0.15
-            # pertub_force = np.random.uniform(-10,10)
-            # self.cone.apply_perturbation_force(force_vector=[pertub_force,0,0], pos_vector=[0,0,0])
-
 
         self.cone.apply_action(action*action_scale)
 
@@ -99,13 +92,12 @@ class RockWalkEnv(gym.Env):
 
         if self._isTrain==True:
             object_param = list(np.loadtxt(self._object_param_file_path, delimiter=',', skiprows=1, dtype=np.float64)[-1:].flatten())
-            yaw_spawn = np.pi/2 #+ self.np_random.uniform(-np.pi/4, np.pi/4)  #self.np_random.uniform(-np.pi, np.pi) #
         else:
             object_param = self._init_object_param
-            yaw_spawn = np.pi/2
 
+
+        yaw_spawn = np.pi/2
         mu_cone_ground = np.inf
-        self._random_action_scale = self.np_random.uniform(0.1, 1.0)
         self.initialize_physical_objects(yaw_spawn, mu_cone_ground)
 
         self.start_time = time.time()
@@ -138,11 +130,9 @@ class RockWalkEnv(gym.Env):
             reward = -50
 
         else:
-
             r_forward = 1000*(cone_state[0]-self.prev_x[0])
             r_spin = -20*max(abs(cone_state[4])-np.pi/2, 0) #20
             r_action_dot = -3*action_accel
-            # r_action_sum = -3*self.action_mag_sum
 
             reward = r_forward + r_spin + r_action_dot
 
@@ -182,7 +172,6 @@ class RockWalkEnv(gym.Env):
             theta = cone_state[3]
         self.cone.apply_action([0.,0.])
         bullet.stepSimulation()
-        # print("Initial tilting done")
 
 
     def bullet_setup(self, bullet_connection):
@@ -214,15 +203,6 @@ class RockWalkEnv(gym.Env):
     def close(self):
         bullet.disconnect(self.clientID)
 
-
     def seed(self, seed=None):
         self.np_random, seed = gym.utils.seeding.np_random(seed)
         return [seed]
-
-
-
-# print("r_forward:", r_forward)
-# print("r_spin:", r_spin)
-# print("r_nutation:", r_nutation)
-# print("r_action_dot:", r_action_dot)
-# print("------------------------------")
