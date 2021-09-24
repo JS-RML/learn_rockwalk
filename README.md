@@ -1,2 +1,2 @@
-# Learn Rock-and-Walk Manipulation
+# Learning-Based Rock-and-Walk
 Dynamic, Non-Prehensile, and Underactuated Object Locomotion through Reinforcement Learning
