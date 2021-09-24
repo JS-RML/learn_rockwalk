@@ -42,19 +42,19 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 
-## 3. Quick Start: Learned Policy in Simulation
+## 3. Quick Start: Object Transport with Learned Policy in Simulation
 Clone the repository in your conda environment installed with the above dependencies.
 ```
 git clone https://github.com/HKUST-RML/learn_rockwalk.git
 ```
 
-**Cone Transport**
+**Cone-Shaped Model in Simulation**
 ```
 cd learn_rockwalk/cone_simulation/
 python main_sim.py
 ```
 
-**Moai Transport**
+**Moai in Simulation**
 ```
 cd learn_rockwalk/moai_simulation/
 python main_sim.py
