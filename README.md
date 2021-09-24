@@ -27,7 +27,20 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 <!--![](https://github.com/HKUST-RML/rockwalk/blob/master/media/intro_photo_github_new-01.png)-->
 
 
-## 2. Prerequistes
+## 2. Dependencies
+### 2.1 Simulated Implementation:
+* [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
+* [**gym**](https://gym.openai.com/docs/) to create environment for object transport
+* [**trimesh**](https://github.com/mikedh/trimesh) to generate 3D object models
+* [**pybullet**](https://pypi.org/project/pybullet/) simulator to resolve mechanics of interaction btw. object and the support surface 
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) to training the learning algorithm
+* [**tensorboard**](https://pypi.org/project/tensorboard/) (version 2.0.0) to monitor training progress
+
+### 2.2 Real Implementation:
+* [**ROS Melodic**](https://www.ros.org/) running on [Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
+* [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of [UR10 Robot Arm](https://www.universal-robots.com/products/ur10-robot/)
+* [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
+
 
 <!-- ### 2.1 Hardware
 * [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) equipped with [**Arduino 9 Axis Motion Shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
