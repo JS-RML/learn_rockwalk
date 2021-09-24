@@ -50,13 +50,19 @@ git clone https://github.com/HKUST-RML/learn_rockwalk.git
 
 **Cone-Shaped Model in Simulation**
 ```
-cd learn_rockwalk/cone_simulation/
+cd learn_rockwalk/cone_simulation/Rock-Walk
+pip install -e .
+
+cd ..
 python main_sim.py
 ```
 
 **Moai in Simulation**
 ```
-cd learn_rockwalk/moai_simulation/
+cd learn_rockwalk/moai_simulation/Rock-Walk
+pip install -e .
+
+cd ..
 python main_sim.py
 ```
 Type 'yes' when prompted to test the model.
