@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<robot name="AutoObjectTransport">
+
+  <material name="gray">
+      <color rgba="0.66 0.66 0.66 1"/>
+  </material>
+
+  <material name="black">
+      <color rgba="0 0 0 1"/>
+  </material>
+
+
+  <link name="base_link">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="apex_link_x">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="apex_link_y">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="apex_link_z">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="apex_link_dummy_1">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="apex_link_dummy_2">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="1e-10" ixy="0." ixz="0." iyy="1e-10" iyz="0." izz="1e-10"/>
+    </inertial>
+  </link>
+
+  <link name="cone">
+    <inertial>
+      <mass value="1.922933964087465"/>
+      <origin xyz="-8.081520961815019e-18 0.26249999999999996 -1.1250000000000002"/>
+      <inertia ixx="0.20639122984233205" ixy="-1.2603850255143981e-18" ixz="-2.0102915281502057e-17" iyy="0.19755775194480518" iyz="0.03785776241797191" izz="0.07945387534737801"/>
+    </inertial>
+
+    <contact>
+      <lateral_friction value="0.4"/>
+    </contact>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="mesh/object_mesh.obj"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="mesh/object_mesh.obj"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+    <!--link name="cone_marker">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0.0 -0.74"/>
+            <geometry>
+                <box size="0.005 0.005 1.47" />
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link-->
+
+
+  <joint name="joint_apex_x" type="prismatic">
+    <axis xyz="1 0 0"/>
+    <parent link="base_link"/>
+    <child link="apex_link_x"/>
+    <limit lower="-100" upper="100"/>
+  </joint>
+
+  <joint name="joint_apex_y" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <parent link="apex_link_x"/>
+    <child link="apex_link_y"/>
+    <limit lower="-100" upper="100"/>
+  </joint>
+
+  <joint name="joint_apex_z" type="prismatic">
+    <axis xyz="0 0 1"/>
+    <parent link="apex_link_y"/>
+    <child link="apex_link_z"/>
+    <limit lower="-100" upper="100"/>
+  </joint>
+
+  <joint name="joint_apex_dummy_1" type="spherical">
+    <axis xyz="0 0 1"/>
+    <parent link="apex_link_z"/>
+    <child link="apex_link_dummy_1"/>
+  </joint>
+
+  <joint name="joint_apex_dummy_2" type="spherical">
+    <axis xyz="0 1 0"/>
+    <parent link="apex_link_dummy_1"/>
+    <child link="apex_link_dummy_2"/>
+  </joint>
+
+  <joint name="joint_apex_dummy_3" type="spherical">
+    <axis xyz="1 0 0"/>
+    <parent link="apex_link_dummy_2"/>
+    <child link="cone"/>
+  </joint>
+
+  <!--joint name="joint_cone_marker" type="fixed">
+    <parent link="cone"/>
+    <child link="cone_marker"/>
+  </joint-->
+
+</robot>

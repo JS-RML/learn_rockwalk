@@ -1,0 +1,6 @@
+setup.py
+rock_walk.egg-info/PKG-INFO
+rock_walk.egg-info/SOURCES.txt
+rock_walk.egg-info/dependency_links.txt
+rock_walk.egg-info/requires.txt
+rock_walk.egg-info/top_level.txt
