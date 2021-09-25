@@ -46,9 +46,12 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**tensorboard**](https://pypi.org/project/tensorboard/) (version 2.0.0) to monitor training progress
 
 ### 2.2 Real Implementation:
+#### Manipulator Arm
 * [**ROS Melodic**](https://www.ros.org/) running on [Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of [UR10 Robot Arm](https://www.universal-robots.com/products/ur10-robot/)
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
+
+#### Quadrotor
 
 
 ## 3. Quick Start: Object Transport with Learned Policy in Simulation
