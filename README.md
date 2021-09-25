@@ -1,4 +1,4 @@
-# Learning Rock-and-walk
+# Learning to Rock-and-walk
 
 <p align="center">
   <img height="250" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/moai_rviz_standard.gif">
