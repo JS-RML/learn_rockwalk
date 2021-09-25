@@ -20,6 +20,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 
 <p align="center">
   <img height="250" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/cone_rviz_standard.gif">
+  <img height="250" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/cone_real_aerial.gif">
 </p>
 
 **Related Papers**
