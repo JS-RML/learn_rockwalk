@@ -14,6 +14,10 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
   <img height="150" src="https://github.com/HKUST-RML/rockwalk/blob/master/media/aerial_rockwalk.gif">
 </p> -->
 
+<p align="center">
+  <img height="250" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/cone_rviz_standard.gif">
+  <img height="250" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/moai_rviz_standard.gif">
+</p>
 
 **Related Papers**
 1. A. Nazir, P. Xu, J. Rojas, and J. Seo, "**Learning to Rock-and-Walk: Dynamic, Non-Prehensile, and Underactuated Object Locomotion through Reinforcement Learning**," submitted to ICRA'22.
