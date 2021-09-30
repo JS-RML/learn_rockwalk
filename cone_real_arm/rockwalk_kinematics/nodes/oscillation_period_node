@@ -1,0 +1,67 @@
+#!/usr/bin/env python
+
+import rospy
+import copy
+import math
+import csv
+
+from geometry_msgs.msg import TwistStamped, Twist, Vector3
+
+from rockwalk_kinematics.Subscribers import SubscriberKinematicsNode
+
+
+
+if __name__ == '__main__':
+    rospy.init_node("oscillation_period_node", anonymous=True)
+
+    sub_kinematics = SubscriberKinematicsNode()
+    rospy.sleep(4)
+
+
+    rate = rospy.Rate(50)
+
+    nutation_angle = []
+    oscillation_period = []
+
+    data_points = 0
+
+
+    while not rospy.is_shutdown():
+
+        measure_period = raw_input("Press enter to begin measuring period of oscillation")
+
+        if measure_period == "":
+            nutation_angle.append(math.degrees(sub_kinematics._body_euler.y))
+            count = 0
+
+            while True:
+                if abs(sub_kinematics._body_twist.twist.angular.z) < 0.25 and sub_kinematics._body_euler.z > math.radians(15) and count == 0:
+                    start_time = rospy.get_time()
+                    count = count+1
+                    print("start")
+                    rospy.sleep(0.2)
+
+                elif abs(sub_kinematics._body_twist.twist.angular.z) < 0.25 and sub_kinematics._body_euler.z > math.radians(15) and count == 1:
+                    count = count+1
+                    print("1 oscillations")
+                    rospy.sleep(0.2)
+
+                elif abs(sub_kinematics._body_twist.twist.angular.z) < 0.25 and sub_kinematics._body_euler.z > math.radians(15) and count == 2:
+                    end_time = rospy.get_time()
+                    print("2 oscillations")
+                    oscillation_period.append((end_time-start_time)/2)
+                    data_points = data_points + 1
+                    print(nutation_angle)
+                    print(oscillation_period)
+                    break
+
+
+                rate.sleep()
+
+        if data_points == 10:
+            print("writing data to file")
+            with open('small_obj_period.csv', 'w') as f:
+                writer = csv.writer(f, delimiter='\t')
+                writer.writerows(zip(nutation_angle,oscillation_period))
+
+    rospy.spin()

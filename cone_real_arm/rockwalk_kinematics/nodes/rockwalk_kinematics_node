@@ -1,0 +1,83 @@
+#!/usr/bin/env python
+
+import rospy
+
+from rockwalk_kinematics.Subscribers import SubscriberMotionShield
+from rockwalk_kinematics.Publishers import KinematicsPublishers
+from rockwalk_kinematics.RollingKinematics import Kinematics
+from rockwalk_kinematics.Visualization import KinematicsVisualization
+
+from geometry_msgs.msg import Vector3, Pose, PoseArray, Point, Quaternion
+from std_msgs.msg import Float64
+
+
+if __name__ == '__main__':
+    rospy.init_node("rockwalk_kinematics_node", anonymous=True)
+
+    sub_motion_shield = SubscriberMotionShield()
+
+    pub_kinematics = KinematicsPublishers()
+
+    rospy.sleep(2)
+
+    object_kinematics = Kinematics(sub_motion_shield, pub_kinematics)
+
+    object_visualization = KinematicsVisualization(pub_kinematics,object_kinematics)
+
+    rate = rospy.Rate(50)
+
+    prev_min_nutation = Float64(0)
+    prev_detect_mean_pos_nutation = False
+
+
+    prev_pke = Float64(0)
+    prev_dke = Float64(0)
+    prev_dkedt = Float64(0)
+    prev_t = rospy.get_time()
+    prev_detect_mean_pos = False
+
+
+    # previous_disk_center_position = Vector3(0,0,0)
+    # previous_average_forward_speed = Float64(0)
+    # previous_d_average_forward_speed_dt = Float64(0)
+    # previous_time_2 = rospy.get_time()
+    # previous_detect_mean_pos_2 = False
+
+    rockwalk_step = 0
+    previous_waypoints = PoseArray()
+    previous_waypoints.poses.append(Pose(Point(0,0,0), Quaternion(0,0,0,1)))
+
+    while not rospy.is_shutdown():
+
+        object_kinematics.compute_body_euler()
+        object_kinematics.compute_body_twist()
+        object_kinematics.compute_object_pose()
+        object_kinematics.compute_contact_coordinates()
+        object_kinematics.compute_apex_coordinates()
+        object_kinematics.compute_apex_velocity()
+        object_kinematics.compute_CoM_coordinates()
+        object_kinematics.compute_CoM_velocity()
+        object_kinematics.compute_angular_velocity()
+        object_kinematics.compute_energies()
+
+        prev_min_nutation, prev_detect_mean_pos_nutation = object_kinematics.compute_min_nutation(prev_min_nutation, prev_detect_mean_pos_nutation)
+
+
+        prev_pke, prev_dke, prev_dkedt, prev_t, prev_detect_mean_pos = object_kinematics.compute_pke_dke_dkedt(
+                                                                                            prev_pke,
+                                                                                            prev_dke,
+                                                                                            prev_dkedt,
+                                                                                            prev_t,
+                                                                                            prev_detect_mean_pos)
+
+        # previous_disk_center_position, previous_average_forward_speed, previous_d_average_forward_speed_dt, previous_time_2, previous_detect_mean_pos_2 = object_kinematics.compute_average_forward_speed(
+        #                                                                                                                                                     previous_disk_center_position,
+        #                                                                                                                                                     previous_average_forward_speed,
+        #                                                                                                                                                     previous_d_average_forward_speed_dt,
+        #                                                                                                                                                     previous_time_2,
+        #                                                                                                                                                     previous_detect_mean_pos_2)
+
+        previous_waypoints, rockwalk_step = object_kinematics.compute_next_waypoint(previous_waypoints, rockwalk_step)
+
+        rate.sleep()
+    rospy.spin()
