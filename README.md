@@ -55,7 +55,18 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 TODO
 
 
-## 3. Quick Start: Object Transport with Learned Policy in Simulation
+## 3. Object Transport with Learned Policy in Simulation
+
+### What you need:
+* [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
+* [**gym**](https://gym.openai.com/docs/) to create environment for object transport
+* [**trimesh**](https://github.com/mikedh/trimesh) to generate 3D object models
+* [**pybullet**](https://pypi.org/project/pybullet/) simulator to resolve mechanics of interaction between the object and the support surface 
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) to train the learning algorithm
+* [**tensorboard**](https://pypi.org/project/tensorboard/) (version 2.0.0) to monitor training progress
+
+### Next steps:
+
 Clone the repository in your conda environment installed with the above dependencies.
 ```
 git clone https://github.com/HKUST-RML/learn_rockwalk.git
@@ -81,12 +92,15 @@ python main_sim.py
 Type 'yes' when prompted to test the model.
 
 
+## 4. Real-World Experiment with Robot Arm
+
+### What you need:
+* [**ROS Melodic**](https://www.ros.org/) running on [Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
+* [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of [UR10 Robot Arm](https://www.universal-robots.com/products/ur10-robot/)
+* [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 
-
-
-
-
+### What you need:
 
 
 
