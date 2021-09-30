@@ -82,7 +82,7 @@ Type 'yes' when prompted to test the model.
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 
-### What you need:
+### Next steps:
 
 
 
