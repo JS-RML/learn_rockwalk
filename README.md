@@ -84,16 +84,31 @@ Type 'yes' when prompted to test the model.
 
 #### Hardware
 * [**UR10 robot arm**](https://www.universal-robots.com/products/ur10-robot/)
-* [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl) (can be 3D printed and then fastened to the robot arm's wrist)
+* [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl) (can be 3D printed and fastened to the robot arm's wrist)
 * [**cone-shaped object**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/cone.stl) to be transported
-* [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield) (to be fixed on the cone object)
+* [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) equipped with [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 #### Software
 * [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of UR10 robot arm
+* [**Arduino IDE**](https://www.arduino.cc/en/software)
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from Arduino 9-axis motion shield in ROS
 
-### Step 1:
+### Step 1: Set up motion shield and get object state
+
+1a. Fix Arduino mega (equipped with motion shield) on the cone object and connect it to the laptop.
+
+1b. Upload [this code](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/rockwalk_kinematics/arduino/motion_shield_output/motion_shield_output.ino) to Arduino mega using Arduino IDE
+
+1c. Publish motion shield data in ROS using rosserial. Then calibrate the motion shield and use the output to compute object state:
+```
+rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
+***calibrate motion sheild***
+rosrun rockwalk_kinematics rockwalk_kinematics_node
+```
+
+```
+roslaunch rockwalk_kinematics
 
 
 
