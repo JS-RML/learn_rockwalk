@@ -107,10 +107,6 @@ rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
 rosrun rockwalk_kinematics rockwalk_kinematics_node
 ```
 
-```
-roslaunch rockwalk_kinematics
-
-
 
 ### Step 2:
 
