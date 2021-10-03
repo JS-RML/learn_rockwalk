@@ -84,14 +84,14 @@ Type 'yes' when prompted to test the model.
 
 #### Hardware
 * [**UR10 robot arm**](https://www.universal-robots.com/products/ur10-robot/)
-* 3D printed [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl)
-* [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
+* [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl) (can be 3D printed and then fastened to the robot arm's wrist)
 * [**cone-shaped object**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/cone.stl) to be transported
+* [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield) (to be fixed on the cone object)
 
 #### Software
-* [**ROS Melodic**](https://www.ros.org/) running on [Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
+* [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of UR10 robot arm
-* [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from Arduino 9-axis motion shield
+* [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from Arduino 9-axis motion shield in ROS
 
 ### Step 1:
 
