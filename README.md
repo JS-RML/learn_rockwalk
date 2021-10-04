@@ -86,7 +86,7 @@ Type 'yes' when prompted to test the model.
 * [**UR10 robot arm**](https://www.universal-robots.com/products/ur10-robot/)
 * [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl) (can be 3D printed and fastened to the robot arm's wrist)
 * [**cone-shaped object**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/cone.stl) to be transported
-* [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) equipped with [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
+* [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) and [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 #### Software
 * [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
@@ -100,11 +100,33 @@ Type 'yes' when prompted to test the model.
 
 1b. Upload [this code](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/rockwalk_kinematics/arduino/motion_shield_output/motion_shield_output.ino) to Arduino mega using Arduino IDE
 
-1c. Publish motion shield data in ROS using rosserial. Then calibrate the motion shield and use the output to compute object state:
+1c. Install the package `rockwalk_kinematics` in your catkin workspace
+```
+cd catkin_ws
+catkin build
+````
+
+1d. Publish motion shield data in ROS using rosserial.
 ```
 rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
-***calibrate motion sheild***
+```
+
+1e. Calibrate the motion shield by rotating the object at roughly 45 degrees and holding there for few seconds. You can check the calibration status using the command
+```
+rostopic echo /calibration_motion_shield
+```
+An output '3' would mean successful calibration.
+
+
+1f. Place the object upright floor facing the direction in which it is to be transported. Then, run the following node to compute object's state from motion shield data:
+```
 rosrun rockwalk_kinematics rockwalk_kinematics_node
+```
+
+1g. Perform sanity check on the computed Euler angles and their time rates:
+```
+rostopic echo /body_euler
+rostopic echo /body_twist
 ```
 
 
