@@ -24,7 +24,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
   <img height="200" src="https://github.com/HKUST-RML/learn_rockwalk/blob/main/media/cone_real_aerial.gif">
 </p>
 
-**Paper**
+**Related Paper**
 
 A. Nazir, P. Xu, J. Rojas, and J. Seo, "**Learning to Rock-and-Walk: Dynamic, Non-Prehensile, and Underactuated Object Locomotion through Reinforcement Learning**," submitted to ICRA'22.
 <!-- 2. A. Nazir and J. Seo, "[**Passive Dynamic Object Locomotion by Rocking and Walking Manipulation**](https://ieeexplore.ieee.org/document/8794163)," 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 2019, pp. 7926-7932, doi: 10.1109/ICRA.2019.8794163. -->
