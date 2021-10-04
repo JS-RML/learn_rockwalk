@@ -113,7 +113,7 @@ cd catkin_ws
 catkin build
 ````
 
-1d. Publish motion shield data in ROS using rosserial.
+1d. Publish motion shield data in ROS using rosserial
 ```
 rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=115200
 ```
@@ -138,14 +138,20 @@ rostopic echo /body_twist
 
 
 ### Step 2: Transport cone object with robot arm using the learned policy
-2a. Mount the end-effector on the wrist of the robot arm
 
-2b. Bring the robot to a start configuration by running the script
+2a. Mount the caging end-effector on the wrist of the robot arm.
+
+2b. Bring the robot arm to an appropriate start configuration by running the script
 ```
 cd cone_real_arm/
 python main_real.py
-
 ```
+2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector.
+
+2d. Press enter when prompted to execute real robot motion.
+
+2e. You can obtain slower (faster) end-effector speed by decreasing (increasing) the parameter [`action_scale`](https://github.com/HKUST-RML/learn_rockwalk/blob/df795b96b58abc1b06c68d704469cdba4d71c354/cone_real_arm/main_real.py#L77).
+
 
 
 
