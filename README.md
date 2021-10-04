@@ -91,7 +91,7 @@ Type 'yes' when prompted to test the model.
 #### Software
 * [**Arduino IDE**](https://www.arduino.cc/en/software)
 * [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
-* [**rosserial**](http://wiki.ros.org/rosserial) (installed in ROS)
+* [**rosserial**](http://wiki.ros.org/rosserial) (install in ROS)
 * [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx) (install in conda environment)
 * [**rospy**](https://anaconda.org/conda-forge/ros-rospy) (install in conda environment)
