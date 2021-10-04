@@ -29,7 +29,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 A. Nazir, P. Xu, J. Rojas, and J. Seo, "**Learning to Rock-and-Walk: Dynamic, Non-Prehensile, and Underactuated Object Locomotion through Reinforcement Learning**," submitted to ICRA'22.
 <!-- 2. A. Nazir and J. Seo, "[**Passive Dynamic Object Locomotion by Rocking and Walking Manipulation**](https://ieeexplore.ieee.org/document/8794163)," 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 2019, pp. 7926-7932, doi: 10.1109/ICRA.2019.8794163. -->
 
-
+[**Supplementary Video**](https://drive.google.com/file/d/1j7xXWA2jho44ODuEY7MRIYM5uTmM9IUW/view?usp=sharing)
 
 
 <!--[**Full Video Link**](https://drive.google.com/file/d/1Nx8kZgXvVKMN7lSgfyp2BvnqaPJYh2qx/view?usp=sharing)-->
