@@ -110,7 +110,6 @@ Type 'yes' when prompted to test the learned policy.
 
 1c. Install the package [`rockwalk_kinematics`](https://github.com/HKUST-RML/learn_rockwalk/tree/main/cone_real_arm/rockwalk_kinematics) in your ROS catkin workspace
 ```
-cd catkin_ws
 catkin build
 ````
 
