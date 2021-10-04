@@ -50,7 +50,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 
 ### Step 1:
 
-Clone the repository in your conda environment installed with the above dependencies.
+Clone the repository
 ```
 git clone https://github.com/HKUST-RML/learn_rockwalk.git
 ```
@@ -90,10 +90,10 @@ Type 'yes' when prompted to test the model.
 
 #### Software
 * [**Arduino IDE**](https://www.arduino.cc/en/software)
-* [**rosserial**](http://wiki.ros.org/rosserial)
 * [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
-* [**python-urx**](https://github.com/SintefManufacturing/python-urx)
+* [**rosserial**](http://wiki.ros.org/rosserial) (installed in ROS)
 * [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
+* [**python-urx**](https://github.com/SintefManufacturing/python-urx) (install in conda environment)
 * [**rospy**](https://anaconda.org/conda-forge/ros-rospy) (install in conda environment)
 * [**openai gym**](https://gym.openai.com/docs/) (install in conda environment)
 * [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) (install in conda environment)
@@ -146,11 +146,11 @@ rostopic echo /body_twist
 cd cone_real_arm/
 python main_real.py
 ```
-2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector.
+**BEWARE! REAL ROBOT MOTION AHEAD. ENSURE NECESSARY PRECAUTIONS**
 
-2d. Press enter when prompted to execute real robot motion.
+2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector. Then, press return key when prompted to execute real robot motion.
 
-2e. You can obtain slower (faster) end-effector speed by decreasing (increasing) the parameter [`action_scale`](https://github.com/HKUST-RML/learn_rockwalk/blob/df795b96b58abc1b06c68d704469cdba4d71c354/cone_real_arm/main_real.py#L77).
+2d. You can obtain slower (faster) end-effector speed by decreasing (increasing) the parameter [`action_scale`](https://github.com/HKUST-RML/learn_rockwalk/blob/df795b96b58abc1b06c68d704469cdba4d71c354/cone_real_arm/main_real.py#L77).
 
 
 
