@@ -89,10 +89,16 @@ Type 'yes' when prompted to test the model.
 * [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) and [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 #### Software
-* [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
-* [**python-urx**](https://github.com/SintefManufacturing/python-urx) for control of UR10 robot arm
 * [**Arduino IDE**](https://www.arduino.cc/en/software)
-* [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from Arduino 9-axis motion shield in ROS
+* [**rosserial**](http://wiki.ros.org/rosserial)
+* [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
+* [**python-urx**](https://github.com/SintefManufacturing/python-urx)
+* [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
+* [**openai gym**](https://gym.openai.com/docs/)
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html)
+
+
+
 
 ### Step 1: Set up motion shield and get object state
 
@@ -123,16 +129,16 @@ An output '3' would mean successful calibration.
 rosrun rockwalk_kinematics rockwalk_kinematics_node
 ```
 
-1g. Perform sanity check on the computed Euler angles and their time rates:
+1g. Lastly, perform sanity check on the computed Euler angles and their time rates:
 ```
 rostopic echo /body_euler
 rostopic echo /body_twist
 ```
 
 
-### Step 2:
+### Step 2: Transport cone object with robot arm using the learned policy
+2a. 
 
-### Step 3:
 
 
 
