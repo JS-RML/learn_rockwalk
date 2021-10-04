@@ -146,7 +146,8 @@ rostopic echo /body_twist
 cd cone_real_arm/
 python main_real.py
 ```
-**BEWARE! REAL ROBOT MOTION AHEAD. ENSURE NECESSARY PRECAUTIONS**
+
+**BEWARE! REAL ROBOT MOTION AHEAD. PLEASE ENSURE NECESSARY PRECAUTIONS.**
 
 2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector. Then, press return key when prompted to execute real robot motion.
 
