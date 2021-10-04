@@ -125,7 +125,7 @@ rostopic echo /calibration_motion_shield
 An output '3' would mean successful calibration.
 
 
-1f. Place the object upright floor facing the direction in which it is to be transported. Then, run the following node to compute object's state from motion shield data:
+1f. Place the object upright on floor facing the direction in which it is to be transported. Then, run the following node to compute object's state from motion shield data:
 ```
 rosrun rockwalk_kinematics rockwalk_kinematics_node
 ```
