@@ -76,7 +76,7 @@ pip install -e .
 cd ..
 python main_sim.py
 ```
-Type 'yes' when prompted to test the model.
+Type 'yes' when prompted to test the learned policy.
 
 
 ## 3. Real-World Impelmentation with Robot Arm
