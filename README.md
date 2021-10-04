@@ -41,11 +41,11 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 
 ### What you need:
 * [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
-* [**openai gym**](https://gym.openai.com/docs/)
-* [**trimesh**](https://github.com/mikedh/trimesh)
-* [**pybullet**](https://pypi.org/project/pybullet/)
-* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html)
-* [**tensorboard**](https://pypi.org/project/tensorboard/) (version 2.0.0)
+* [**openai gym**](https://gym.openai.com/docs/) (install in conda environment)
+* [**trimesh**](https://github.com/mikedh/trimesh) (install in conda environment)
+* [**pybullet**](https://pypi.org/project/pybullet/) (install in conda environment)
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) (install in conda environment)
+* [**tensorboard 2.0.0**](https://pypi.org/project/tensorboard/) (install in conda environment)
 
 
 ### Step 1:
@@ -84,8 +84,8 @@ Type 'yes' when prompted to test the model.
 
 #### Hardware
 * [**UR10 robot arm**](https://www.universal-robots.com/products/ur10-robot/)
-* [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl) (can be 3D printed and fastened to the robot arm's wrist)
-* [**cone-shaped object**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/cone.stl) to be transported
+* [**caging end-effector**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/caging_end_effector.stl)
+* [**cone-shaped object**](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/CAD%20models/cone.stl)
 * [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) and [**Arduino 9-axis motion shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 #### Software
@@ -94,8 +94,9 @@ Type 'yes' when prompted to test the model.
 * [**ROS Melodic**](https://www.ros.org/) running on Ubuntu 18.04
 * [**python-urx**](https://github.com/SintefManufacturing/python-urx)
 * [**anaconda**](https://www.anaconda.com/products/individual) installed with Python 3.8
-* [**openai gym**](https://gym.openai.com/docs/)
-* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html)
+* [**rospy**](https://anaconda.org/conda-forge/ros-rospy) (install in conda environment)
+* [**openai gym**](https://gym.openai.com/docs/) (install in conda environment)
+* [**stable-baselines-3**](https://stable-baselines3.readthedocs.io/en/master/guide/install.html) (install in conda environment)
 
 
 
@@ -137,7 +138,14 @@ rostopic echo /body_twist
 
 
 ### Step 2: Transport cone object with robot arm using the learned policy
-2a. 
+2a. Mount the end-effector on the wrist of the robot arm
+
+2b. Bring the robot to a start configuration by running the script
+```
+cd cone_real_arm/
+python main_real.py
+
+```
 
 
 
