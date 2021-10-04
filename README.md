@@ -141,13 +141,14 @@ rostopic echo /body_twist
 
 2a. Mount the caging end-effector on the wrist of the robot arm.
 
+**BEWARE! REAL ROBOT MOTION AHEAD. PLEASE ENSURE NECESSARY PRECAUTIONS.**
+
 2b. Bring the robot arm to an appropriate start configuration by running the script
 ```
 cd cone_real_arm/
 python main_real.py
 ```
 
-**BEWARE! REAL ROBOT MOTION AHEAD. PLEASE ENSURE NECESSARY PRECAUTIONS.**
 
 2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector. Then, press return key when prompted to execute real robot motion.
 
