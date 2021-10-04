@@ -108,7 +108,7 @@ Type 'yes' when prompted to test the model.
 
 1b. Upload [this code](https://github.com/HKUST-RML/learn_rockwalk/blob/main/cone_real_arm/rockwalk_kinematics/arduino/motion_shield_output/motion_shield_output.ino) to Arduino mega using Arduino IDE
 
-1c. Install the package [`rockwalk_kinematics`](https://github.com/HKUST-RML/learn_rockwalk/tree/main/cone_real_arm/rockwalk_kinematics) in your catkin workspace
+1c. Install the package [`rockwalk_kinematics`](https://github.com/HKUST-RML/learn_rockwalk/tree/main/cone_real_arm/rockwalk_kinematics) in your ROS catkin workspace
 ```
 cd catkin_ws
 catkin build
