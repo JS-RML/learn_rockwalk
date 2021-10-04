@@ -142,7 +142,7 @@ rostopic echo /body_twist
 
 2a. Mount the caging end-effector on the wrist of the robot arm.
 
-**BEWARE! REAL ROBOT MOTION AHEAD. PLEASE ENSURE NECESSARY PRECAUTIONS.**
+**CAUTION: REAL ROBOT MOTION AHEAD. PLEASE ENSURE NECESSARY PRECAUTIONS.**
 
 2b. Bring the robot arm to an appropriate start configuration by running the script
 ```
