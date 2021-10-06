@@ -156,13 +156,9 @@ python main_real.py
 
 
 
+## 4. Real-World Impelmentation with Robot Arm
 
-
-
-
-
-
-
+Detailed instructions on executing rock-and-walk using a quadrotor equipped with a caging end-effector can be found in `aerial_experiment/README.md`.
 
 
 
