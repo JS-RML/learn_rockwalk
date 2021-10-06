@@ -169,11 +169,22 @@ python main_real.py
 
 
 
+#### Software
+
+- Ubuntu 16.04
+- ROS Kinetic
+
+
+
 #### Run real experiments
 
 1. Open OptiTrack
 2. `roslaunch rnw_ros ground_station_caging_rl.launch` on ground station i.e. your laptop
 3. SSH into the aircraft and `roslaunch rnw_ros flight.launch`
+
+
+
+Addtional details can be found in the `cone_real_quadrotor` subdirectory
 
 
 
@@ -249,4 +260,4 @@ Detailed instructions on executing rock-and-walk using a quadrotor equipped with
 
 
 ## Contact Us
-For technical enquiry, please contact Abdullah Nazir (sanazir[at]connect.ust.hk).
+For technical enquiry, please contact Abdullah Nazir (sanazir[at]connect.ust.hk) and Pu Xu (pxuaf[at]connect.ust.hk).
