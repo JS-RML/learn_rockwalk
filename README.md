@@ -149,7 +149,6 @@ cd cone_real_arm/
 python main_real.py
 ```
 
-
 2c. Configure the object so that its vertical rod is accomodated inside the hole of the caging end-effector. Then, press return key when prompted to execute real robot motion.
 
 2d. You can obtain slower (faster) end-effector speed by decreasing (increasing) the value of the parameter [`action_scale`](https://github.com/HKUST-RML/learn_rockwalk/blob/df795b96b58abc1b06c68d704469cdba4d71c354/cone_real_arm/main_real.py#L77).
@@ -160,19 +159,19 @@ python main_real.py
 
 #### Hardware
 
-- DJI N3 Flight Controller
-- DJI Manifold 2-G Onboard Computer
-- OptiTrack Motion Capture System
-- 2 x Nooploop UWB Transmitter
-- Logitech F710 Wireless Gamepad
+- [**DJI N3 Flight Controller**](https://www.dji.com/n3)
+- [**DJI Manifold 2-G Onboard Computer**](https://www.dji.com/manifold-2)
+- [**OptiTrack Motion Capture System**](https://optitrack.com/)
+- [**Nooploop UWB Transmitter**](https://www.nooploop.com/en/) x2
+- [**Logitech F710 Wireless Gamepad**](https://www.logitechg.com/en-us/products/gamepads/f710-wireless-gamepad.html)
 - Custom end-effector for aerial rock-and-walk
 
 
 
 #### Software
 
-- Ubuntu 16.04
-- ROS Kinetic
+- [**Ubuntu 16.04**](https://releases.ubuntu.com/16.04/)
+- [**ROS Kinetic Kame**](http://wiki.ros.org/kinetic)
 
 
 
