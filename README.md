@@ -156,13 +156,29 @@ python main_real.py
 
 
 
-## 4. Real-World Impelmentation with Robot Arm
+## 4. Real-World Impelmentation with Quadrotor
 
-Detailed instructions on executing rock-and-walk using a quadrotor equipped with a caging end-effector can be found in `aerial_experiment/README.md`.
+#### Hardware
+
+- DJI N3 Flight Controller
+- DJI Manifold 2-G Onboard Computer
+- OptiTrack Motion Capture System
+- 2 x Nooploop UWB Transmitter
+- Logitech F710 Wireless Gamepad
+- Custom end-effector for aerial rock-and-walk
+
+
+
+#### Run real experiments
+
+1. Open OptiTrack
+2. `roslaunch rnw_ros ground_station_caging_rl.launch` on ground station i.e. your laptop
+3. SSH into the aircraft and `roslaunch rnw_ros flight.launch`
 
 
 
 <!-- ### 2.1 Hardware
+
 * [**Arduino Mega 2560**](https://store.arduino.cc/usa/mega-2560-r3) equipped with [**Arduino 9 Axis Motion Shield**](https://store.arduino.cc/usa/9-axis-motion-shield)
 * [**Universal Robot UR10 Robot Arm**](https://www.universal-robots.com/products/ur10-robot/)
 
